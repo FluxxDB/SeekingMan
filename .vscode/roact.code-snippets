@@ -1,0 +1,37 @@
+{
+    "Roact Component": {
+        "prefix": ["roactcomponent"],
+        "body": [
+            "import Roact from \"@rbxts/roact\";",
+            "import Hooks from \"@rbxts/roact-hooks\";",
+            "",
+            "interface IProps {}",
+            "",
+            "const Inner${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}: Hooks.FC<IProps> = (props) => {",
+            "    return <></>;",
+            "};",
+            "",
+            "export const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} = new Hooks(Roact)(Inner${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}, {",
+            "    componentType: \"PureComponent\",",
+            "    defaultProps: {},",
+            "});",
+            ""
+        ],
+        "description": "Roact Component"
+    },
+
+    "Roact Story": {
+        "prefix": ["roactstory"],
+        "body": [
+            "import Roact from \"@rbxts/roact\";",
+            "",
+            "export = (target: GuiObject) => {",
+            "\tconst handle = Roact.mount(<></>, target);",
+            "",
+            "\treturn () => Roact.unmount(handle);",
+            "}",
+            ""
+        ],
+        "description": "Roact story for Hoarcekat"
+    }
+}

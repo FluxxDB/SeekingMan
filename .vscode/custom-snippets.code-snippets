@@ -1,0 +1,43 @@
+{
+    "App": {
+        "prefix": ["app"],
+        "description": "Create an app",
+        "body": [
+            "import Roact from \"@rbxts/roact\";",
+            "import { App } from \"client/controllers/app-controller\";",
+            "import { Scene } from \"types/enum/scene\";",
+            "",
+            "interface IProps {}",
+            "",
+            "@App({",
+            "    name: \"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}\",",
+            "    requiredScenes: [Scene.World],",
+            "    ignoreGuiInset: true,",
+            "})",
+            "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} extends Roact.PureComponent<IProps> {",
+            "    public render() {",
+            "        return <></>;",
+            "    }",
+            "}",
+            "",
+            "export = ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g};",
+            ""
+        ]
+    },
+    "Interaction": {
+        "prefix": ["interaction"],
+        "description": "Create an interaction",
+        "body": [
+            "import { Interaction, OnInteracted } from \"client/controllers/interactions/interactions-decorator\";",
+            "",
+            "@Interaction({",
+            "    interactionId: \"${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}\",",
+            "    interactionText: \"Some Interaction\",",
+            "})",
+            "export class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} implements OnInteracted {",
+            "    public onInteracted(obj: BasePart) {}",
+            "}",
+            ""
+        ]
+    }
+}
