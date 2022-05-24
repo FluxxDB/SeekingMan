@@ -1,0 +1,27 @@
+deployments:
+    - name: staging
+      overrides:
+          places:
+              start:
+                  name: "[QA] An Uncoventional Game!"
+    - name: production
+      branches: [main]
+
+templates:
+    experience:
+        genre: all
+        playableDevices: [computer, phone, tablet]
+        playability: public
+        privateServerPrice: 0
+        enableStudioAccessToApis: true
+        icon: assets/marketing/icon/temp-icon.png
+        thumbnails:
+            - assets/marketing/thumbnail/temp-thumbnail.png
+    places:
+        start:
+            file: game.rbxlx
+            name: An Uncoventional Game!
+            description: |-
+                Somewhat Uncoventional?
+            maxPlayerCount: 30
+            serverFill: robloxOptimized
